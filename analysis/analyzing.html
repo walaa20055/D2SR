@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D²SR | Analyzing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../shared/css/style.css" />
+    <link rel="stylesheet" href="../shared/css/pages-common.css" />
+    <link rel="stylesheet" href="analyzing.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <header class="navbar">
+        <a href="../home/index.html" class="logo"
+          ><div class="logo-icon"><i class="fa-solid fa-fingerprint"></i></div>
+          <span>D²SR</span><span class="logo-dot"></span
+        ></a>
+        <nav class="nav-links">
+          <a href="../home/index.html">Home</a>
+          <a href="#" class="active"
+            ><i class="fa-solid fa-circle"></i>Analyzing</a
+          >
+        </nav>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+            title="Toggle dark mode"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <span class="avatar"></span>
+        </div>
+      </header>
+      <main class="stage">
+        <div class="wrap">
+          <section class="card an-card">
+            <div class="an-side">
+              <div class="an-thumb" id="thumb">Uploaded image preview</div>
+              <div class="an-file" id="fileName">—</div>
+              <div class="an-meta" id="fileMeta">—</div>
+            </div>
+            <div class="an-main">
+              <div class="eyebrow">STEP 2 · ANALYZING</div>
+              <h1>Running forensic analysis</h1>
+              <div class="progress"><i id="bar"></i></div>
+              <ul class="steps" id="steps">
+                <li>
+                  <span>AI-Generated Detection</span
+                  ><span class="st">Waiting</span>
+                </li>
+                <li>
+                  <span>Manipulation Detection</span
+                  ><span class="st">Waiting</span>
+                </li>
+                <li>
+                  <span>Forensic Checks (metadata, hash, C2PA)</span
+                  ><span class="st">Waiting</span>
+                </li>
+                <li>
+                  <span>Evidence Aggregation</span
+                  ><span class="st">Waiting</span>
+                </li>
+                <li>
+                  <span>Trust Engine</span><span class="st">Waiting</span>
+                </li>
+              </ul>
+              <a href="../home/index.html" class="cancel"
+                ><i class="fa-solid fa-arrow-left"></i> Cancel and go back</a
+              >
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+
+    <div class="footer-left">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>D²SR Security Command Architecture • Encrypted Node 09–Alpha</span>
+    </div>
+
+    <p class="footer-right">
+        &copy; 2026 Digital Forensics &amp; Incident Response. All signatures cryptographically verified.
+    </p>
+
+    </footer>    
+    </div>
+    <script src="../shared/js/theme.js"></script>
+    <script src="analyzing.js"></script>
+  </body>
+</html>
