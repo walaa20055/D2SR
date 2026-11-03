@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>D²SR | Digital Result</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../shared/css/style.css" />
+    <link rel="stylesheet" href="../shared/css/pages-common.css" />
+    <link rel="stylesheet" href="result.css" />
+  </head>
+  <body>
+    <div class="page-container">
+      <header class="navbar">
+        <a href="../home/index.html" class="logo"
+          ><div class="logo-icon"><i class="fa-solid fa-fingerprint"></i></div>
+          <span>D²SR</span><span class="logo-dot"></span
+        ></a>
+        <nav class="nav-links">
+          <a href="../home/index.html">Home</a>
+          <a href="#" class="active"
+            ><i class="fa-solid fa-circle"></i>Digital Result</a
+          >
+        </nav>
+        <div class="nav-actions">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark mode"
+            title="Toggle dark mode"
+          >
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <span class="avatar"></span>
+        </div>
+      </header>
+      <main class="stage">
+        <div class="wrap">
+          <div class="title-row">
+            <h1>
+              <i class="fa-solid fa-shield-halved"></i
+              ><span id="fileName">—</span>
+            </h1>
+            <div class="btns">
+              <button class="btn" id="saveBtn">
+                <i class="fa-regular fa-floppy-disk"></i> Save
+              </button>
+              <div class="menu-wrap">
+                <button class="btn" id="exportBtn">
+                  <i class="fa-regular fa-file-export"></i> Export as
+                  <i
+                    class="fa-solid fa-chevron-down"
+                    style="font-size: 8px"
+                  ></i>
+                </button>
+                <ul class="menu" id="exportMenu" hidden>
+                  <li><button data-fmt="json">JSON report</button></li>
+                  <li><button data-fmt="print">PDF (print)</button></li>
+                </ul>
+              </div>
+              <button class="btn" id="shareBtn">
+                <i class="fa-solid fa-link"></i> Share
+              </button>
+            </div>
+          </div>
+
+          <div class="grid">
+            <div class="col-left">
+              <section class="card g-view">
+              <div class="card-head">
+                <span class="mono"
+                  >Spatial layer &amp; pixel lattice examination</span
+                ><span class="chip mono">Scan: complete</span>
+              </div>
+              <div class="preview">
+                <img id="previewImg" alt="Analyzed image" />
+              </div>
+              <div class="facts">
+                <div class="fact">
+                  <small class="mono">Timestamp UTC</small
+                  ><b class="mono" id="fTime">—</b>
+                </div>
+                <div class="fact">
+                  <small class="mono">Hash</small
+                  ><b class="mono acc" id="fHash">—</b>
+                </div>
+                <div class="fact">
+                  <small class="mono">C2PA manifest</small
+                  ><b class="mono" id="fC2pa">—</b>
+                </div>
+              </div>
+            </section>
+
+              <section class="card g-acc">
+              <button class="acc-btn" id="acc" aria-expanded="false">
+                <span
+                  ><b class="mono"
+                    >Detailed forensic breakdown &amp; cryptographic logs</b
+                  ><small class="mono"
+                    >EXIF, C2PA manifests, hash &amp; file details</small
+                  ></span
+                >
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <pre class="log mono" id="log" hidden></pre>
+            </section>
+            </div>
+
+            <div class="col-right">
+              <section class="card g-score">
+              <div class="card-head">
+                <span>Trust score</span
+                ><span class="chip mono" id="verdict">—</span>
+              </div>
+              <div class="ring">
+                <svg viewBox="0 0 120 120">
+                  <defs>
+                    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#7c3aed" />
+                      <stop offset="100%" stop-color="#0ea5e9" />
+                    </linearGradient>
+                  </defs>
+                  <circle class="track" cx="60" cy="60" r="52" />
+                  <circle class="bar" id="ringBar" cx="60" cy="60" r="52" />
+                </svg>
+                <div class="ring-num">
+                  <span id="scoreNum">0</span><small>%</small>
+                </div>
+              </div>
+            </section>
+
+              <section class="card g-radar">
+              <h2><i class="fa-solid fa-bullseye"></i>Triage Vertex Radar</h2>
+              <svg class="radar" viewBox="0 0 300 190" id="radar"></svg>
+            </section>
+
+              <div class="g-metrics">
+              <article class="card m">
+                <small class="mono">AI generation</small>
+                <div class="m-val">
+                  <b id="vAi">—</b><span class="tag" id="tAi"></span>
+                </div>
+                <div class="meter"><i id="bAi"></i></div>
+                <p>GAN/diffusion artifact score</p>
+              </article>
+              <article class="card m">
+                <small class="mono">Authenticity</small>
+                <div class="m-val">
+                  <b id="vReal">—</b><span class="tag" id="tReal"></span>
+                </div>
+                <div class="meter"><i id="bReal"></i></div>
+                <p>Metadata &amp; sensor consistency</p>
+              </article>
+              <article class="card m">
+                <small class="mono">Tamper check</small>
+                <div class="m-val">
+                  <b id="vTam">—</b><span class="tag" id="tTam"></span>
+                </div>
+                <div class="meter"><i id="bTam"></i></div>
+                <p>Splicing or editing anomalies</p>
+              </article>
+              <article class="card m">
+                <small class="mono">Aggregate trust</small>
+                <div class="m-val">
+                  <b id="vTrust">—</b><span class="tag" id="tTrust"></span>
+                </div>
+                <div class="meter"><i id="bTrust"></i></div>
+                <p>Cumulative weight algorithm</p>
+              </article>
+            </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer-left">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>D²SR Security Command Architecture • Encrypted Node 09–Alpha</span>
+        </div>
+
+        <p class="footer-right">
+          &copy; 2026 Digital Forensics &amp; Incident Response. All signatures cryptographically verified.
+        </p>
+      </footer>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="../shared/js/theme.js"></script>
+    <script src="result.js"></script>
+  </body>
+</html>

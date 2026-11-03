@@ -1,0 +1,462 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>D²SR | Digital Forensics</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../shared/css/style.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <!-- ================= NAVBAR ================= -->
+
+        <header class="navbar">
+
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-fingerprint"></i>
+                </div>
+
+                <span>D²SR</span>
+                <span class="logo-dot"></span>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="nav-links">
+
+                <a href="#" class="active">
+                    <i class="fa-solid fa-circle"></i>
+                    Home
+                </a>
+
+                <a href="#about">About</a>
+                <a href="#how-to-use">How to use</a>
+                <a href="#contact">Contact us</a>
+
+            </nav>
+
+            <!-- Actions -->
+            <div class="nav-actions">
+
+                <!-- Dark Mode Toggle -->
+                <button
+                    class="theme-toggle"
+                    id="themeToggle"
+                    aria-label="Toggle dark mode"
+                    title="Toggle dark mode">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <a href="#" class="login-btn">Login</a>
+
+                <a href="#" class="register-btn">Register</a>
+
+            </div>
+
+        </header>
+
+
+        <!-- ================= MAIN ================= -->
+
+        <main>
+
+            <!-- Hero Section -->
+            <section class="hero" id="about">
+
+                <div class="hero-content">
+
+                    <h1>D²SR</h1>
+
+                    <h3>
+                        Digital Data Signature Report • Forensic Engine
+                    </h3>
+
+                    <p class="hero-description">
+                        Enterprise forensic verification, neural synthesis detection,
+                        and<br class="desktop-break">
+                        cryptographic integrity analysis across distributed multi-source media.
+                    </p>
+
+
+                    <!-- Upload Card -->
+                    <div class="upload-card">
+
+                        <!-- Upload Header -->
+                        <div class="upload-header">
+
+                            <span class="image-label">
+                                <i class="fa-regular fa-camera"></i>
+                                Image
+                            </span>
+
+                        </div>
+
+
+                        <!-- Upload Area -->
+                        <div class="upload-area" id="uploadArea">
+
+                            <div class="upload-icon">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                            </div>
+
+                            <h2>
+                                Drag and drop suspect image here, or browse files
+                            </h2>
+
+                            <p>
+                                High-precision latent noise decomposition, EXIF integrity audit,
+                                and<br class="desktop-break">
+                                deepfake synthesis scan.
+                            </p>
+
+
+                            <!-- Browse Button -->
+                            <label for="imageUpload" class="browse-btn">
+
+                                <i class="fa-regular fa-folder-open"></i>
+                                Browse Images
+
+                            </label>
+
+                            <input
+                                type="file"
+                                id="imageUpload"
+                                accept="image/png,image/jpeg"
+                                hidden
+                            >
+
+
+                            <!-- Upload Progress -->
+                            <div class="upload-progress" id="uploadProgress" hidden>
+
+                                <div class="upload-progress-top">
+                                    <span>
+                                        <i class="fa-solid fa-spinner fa-spin"></i>
+                                        Uploading image…
+                                    </span>
+
+                                    <strong id="progressPercent">0%</strong>
+                                </div>
+
+                                <div class="upload-progress-track">
+                                    <i id="progressBar"></i>
+                                </div>
+
+                                <span class="upload-progress-name" id="progressName"></span>
+
+                            </div>
+
+
+                            <!-- Image Preview -->
+                            <div class="image-preview" id="imagePreview">
+
+                                <img id="previewImage" src="" alt="Uploaded image">
+
+                                <button id="removeImage" class="remove-image">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+
+                            </div>
+
+
+                            <!-- Analyze -->
+                            <button type="button" class="analyze-btn" id="analyzeBtn" hidden>
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                Analyze Image
+                            </button>
+                            <div class="upload-error" id="uploadError" hidden></div>
+
+
+                            <!-- Supported Formats -->
+                            <div class="supported-formats">
+
+                                <span>Supported formats:</span>
+
+                                <span class="format">JPG</span>
+                                <span class="format">PNG</span>
+                                <span class="format">JPEG</span>
+
+                                <span class="separator">•</span>
+
+                                <span>
+                                    Max file size: <strong>25 MB</strong>
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Upload Footer -->
+                        <div class="upload-footer">
+
+                            <div class="engine-status">
+
+                                <span class="status-dot"></span>
+
+                                Neural Engine v4.2 Ready
+
+                            </div>
+
+
+                            <div class="security-status">
+
+                                <span>
+                                    <i class="fa-solid fa-lock"></i>
+                                    256-bit Encrypted
+                                </span>
+
+                                <span>
+                                    <i class="fa-solid fa-certificate"></i>
+                                    C2PA Compliant
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= EVIDENCE GALLERY ================= -->
+
+            <section class="evidence-section" id="how-to-use">
+
+                <div class="evidence-container">
+
+
+                    <!-- Card 1 -->
+                    <article class="evidence-card">
+
+                        <div class="evidence-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80"
+                                alt="Verified real image"
+                            >
+
+                            <span class="badge verified">
+
+                                <i class="fa-solid fa-certificate"></i>
+
+                                VERIFIED REAL • 99.4%
+
+                            </span>
+
+                            <span class="image-stamp">
+                                C2PA SIGNED • Nikon Z9
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <div class="card-title">
+
+                                <h3>SC_09842_RAW.NEF</h3>
+
+                                <span class="processing-time">
+                                    0.024ms
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Sensor Pattern: Consistent • Hash: 0x8a9f...4f21
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Card 2 -->
+                    <article class="evidence-card">
+
+                        <div class="evidence-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
+                                alt="AI generated portrait"
+                            >
+
+                            <span class="badge ai-generated">
+
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                                AI GENERATED • MIDJOURNEY V6
+
+                            </span>
+
+                            <span class="image-stamp yellow">
+                                SYNTHETIC ARTIFACT DETECTED
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <div class="card-title">
+
+                                <h3>cyber_portrait_v6.png</h3>
+
+                                <span class="ai-score">
+                                    Diffusion: 99.8%
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Fourier Harmonic Disruption in Sub-band 3
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Card 3 -->
+                    <article class="evidence-card">
+
+                        <div class="evidence-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=600&q=80"
+                                alt="Tampered evidence image"
+                            >
+
+                            <span class="badge tampered">
+
+                                <i class="fa-solid fa-pen"></i>
+
+                                TAMPERED EXIF • PHOTOSHOP CC
+
+                            </span>
+
+                            <span class="image-stamp yellow">
+                                SPLICE LOCUS: [X:412, Y:908]
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <div class="card-title">
+
+                                <h3>evidence_node_alpha.jpg</h3>
+
+                                <span class="integrity-score">
+                                    Integrity: 41.2%
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Discontinuous JPEG quantization table matrix
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Card 4 -->
+                    <article class="evidence-card">
+
+                        <div class="evidence-image">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80"
+                                alt="Verified forensic evidence"
+                            >
+
+                            <span class="badge c2pa">
+
+                                <i class="fa-solid fa-gavel"></i>
+
+                                C2PA VERIFIED • REUTERS CERT
+
+                            </span>
+
+                            <span class="image-stamp">
+                                HARDWARE HSM SIGNED
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-content">
+
+                            <div class="card-title">
+
+                                <h3>field_dispatch_04.tiff</h3>
+
+                                <span class="processing-time">
+                                    0.018ms
+                                </span>
+
+                            </div>
+
+                            <p>
+                                Root Trust Chain: Leica Camera AG PKI
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer class="footer" id="contact">
+          <div class="footer-left">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>D²SR Security Command Architecture • Encrypted Node 09–Alpha</span>
+          </div>
+
+          <p class="footer-right">
+            &copy; 2026 Digital Forensics &amp; Incident Response. All signatures cryptographically verified.
+          </p>
+        </footer>
+
+    </div>
+
+
+  
+<script src="../shared/js/engine.js"></script>
+<script src="main.js"></script>
+</body>
+
+</html>

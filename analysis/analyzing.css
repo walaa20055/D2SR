@@ -1,0 +1,148 @@
+/* =========================================
+   ANALYZING PAGE
+========================================= */
+
+.an-card {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 40px;
+
+    padding: 34px;
+
+    max-width: 960px;
+
+    margin: 20px auto 0;
+}
+
+.an-thumb {
+    aspect-ratio: 1;
+
+    border: 1.5px dashed var(--acc);
+    border-radius: 16px;
+    background: var(--p-soft);
+
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--p-muted);
+    font-size: 12px;
+}
+
+.an-thumb img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.an-file {
+    margin-top: 14px;
+
+    font-weight: 700;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+.an-meta {
+    margin-top: 5px;
+
+    color: var(--p-muted);
+    font-size: 11px;
+}
+
+.an-main h1 {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1px;
+
+    margin-bottom: 18px;
+}
+
+.progress {
+    height: 6px;
+
+    border-radius: 9px;
+    background: var(--p-line);
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+}
+
+.progress i {
+    display: block;
+
+    height: 100%;
+    width: 0;
+
+    border-radius: 9px;
+    background: linear-gradient(90deg,#4846dc,#08b9d8);
+
+    transition: width .3s linear;
+}
+
+.steps {
+    list-style: none;
+
+    display: grid;
+    gap: 10px;
+}
+
+.steps li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 13px 16px;
+
+    font-size: 13px;
+
+    border: 1px solid var(--p-line);
+    border-radius: 12px;
+    background: var(--p-soft);
+}
+
+.steps .st {
+    font-size: 12px;
+    color: var(--p-muted);
+}
+
+.steps li.running .st {
+    color: var(--acc);
+}
+
+.steps li.done .st {
+    color: var(--good);
+    font-weight: 600;
+}
+
+.cancel {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    font-size: 12px;
+    color: var(--p-muted);
+}
+
+.cancel:hover {
+    color: var(--acc);
+}
+
+@media(max-width:860px) {
+
+    .an-card {
+        grid-template-columns: 1fr;
+
+        padding: 22px;
+
+        gap: 22px;
+    }
+
+    .an-thumb {
+        max-width: 220px;
+    }
+
+}
